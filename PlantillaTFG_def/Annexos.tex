@@ -1,0 +1,191 @@
+%!TeX root=ManualTFG.tex
+
+\chapter{Format final}
+
+\section{Suport electr nic}
+Cal utilitzar un CD/DVD amb una portada/cap alera normalitzada seguint la plantilla que trobareu a la web de la EPS a l'apartat de TFGs. Dins el CD/DVD s'ha d'incloure:
+\begin{itemize}
+  \item Un arxiu incloent nomes el resum del TFG amb format pfd.
+  \item Un arxiu amb la mem ria amb format pdf.
+  \item Si escau, un arxiu per cada annex/appendix en format pdf.
+  \item Si escau, un arxiu amb els pl nols en format pdf.
+\end{itemize}
+
+\section{Paper, impressi  i enquadernaci }
+
+\subsection{Paper}
+
+Cal utilitzar paper mida DIN A4 vertical (210 x 297 mm), el qual, a m s de ser l'est ndard m s generalitzat,  s el format predeterminat de
+la majoria de processadors de textos. La mem ria del TFG ha de tenir com a m xim una extensi  de 4 cares*N ECTS. Si la mida del treball  s superior el m s recomanable  s resumir alguns apartats o, en casos concrets, es pot optar per distribuir informaci  cap als annexos. 
+
+\subsection{Impressi  a dues cares}
+
+La presentaci  del document ha de ser a dues cares a partir de la introducci  i fins al final del document. 
+\subsection{Enquadernaci }
+
+Cal realitzar l'enquadernaci  amb espiral negra. Les tapes superior i inferior seran de pl stic transparent i negre, respectivament.
+
+\section{Format del document}
+A la web de l'escola polit cnica es proveeixen unes plantilles
+
+
+recomanades tant en  \LaTeX  com en Word i Open Office per a la
+
+
+realitzaci  de la mem ria del treball fi de grau. En cas de no
+
+
+
+utilitzar aquestes plantilles l'estructura final de la mem ria ha de ser an loga a la de la plantilla recomanada. En particular s'han de seguir les seg ents instruccions de format:
+
+\begin{itemize}
+\item Configuraci  de la p gina: Totes les p gines han d'incloure com a m nim el n  de p gina a la cap alera o el peu i  s recomanable incloure tamb  el t tol del cap tol en curs. Els marges de p gina han de ser de mida semblant als de la plantilla.
+\item par graf: interlineat simple, alineaci  justificada.
+\item Mida de lletra: 
+\begin{itemize}
+\item text 11 punts
+\item peus de figures i taules 9 punts
+\end{itemize}
+\item La llista d'acr nims (si escau) i la bibliografia han de seguir el mateix format que el de les plantilles recomanades.
+\end{itemize}
+
+\subsection{la plantilla de \LaTeX }
+En el cas d'utilitzar la plantilla  \LaTeX es important llegir tots les instruccions d'us que es troben comentades a l'inici de la plantilla. A m s,  s important mencionar que aquesta plantilla defineix la portada, els marges, la tipografia, estils i espaiat de tots els elements pel treball de final de
+grau. Una vegada es compila el document, \LaTeX\  adequar  el text al format definit en la plantilla. A m s, \LaTeX\ realitzar  de forma
+autom tica tot un seguit de funcions que us facilitaran la feina amb la mem ria, com per exemple: numerar els cap tols, seccions, i
+sub-seccions; inserir els encap alaments i n meros de p gina; crear de forma autom tica els  ndexs de continguts, figures i taules \dots
+Per tant, l'usuari nom s es preocupar  del text que est  introduint, no ser  necessari pensar en cap moment en l'aspecte final del
+document. Ser  \LaTeX\ qui aplicar  el format de la plantilla al teu text.
+
+Aquesta plantilla est  fonamentada en la classe \texttt{memoir}. Aix  presenta l'avantatge de que com que aquest format inclou autom ticament altres \emph{packages}, per exemple \texttt{booktabs},
+\texttt{array}, \texttt{tabularx}, etc., no caldr  carregar-los en el pre mbul del vostre document. Aix  tamb  significa que totes les comandes de \texttt{memoir} estan a la vostra disposici  per editar la mem ria, per tant,  s molt recomanable consultar el seu manual~\cite{Wil10}.
+
+Amb el format de plantilla que s'ha definit nom s s'enumeraran 3 nivells de profunditat, a part dels cap tols. Per definir-los s'utilitzaran les
+seg ents expressions de \LaTeX:
+
+\begin{verbatim}
+\chapter{Nom del cap tol}
+\section{Nom de la secci }
+\subsection{Nom de la sub-secci }
+\subsubsection{Nom de la sub-sub-secci }
+\end{verbatim}
+
+\section{F rmules, figures i taules}
+\subsection{F rmules}
+
+El format de les f rmules es troba definit en la plantilla i \LaTeX\ l'aplica cada vegada que es compila el document.
+
+Per escriure f rmules en \LaTeX\ s'hauran d'utilitzar les expressions adients. Aqu  es presenta un exemple de codi:
+\begin{verbatim}
+\begin{equation}\label{NomEq}
+\zeta= m \sum _{i=0}^{N} \left( \frac{\beta}{\sigma _i \lambda_ j}
+\right)^{2} \cos (2\pi f_i)
+\end{equation}
+\end{verbatim}
+que produeix el seg ent resultat:
+\begin{equation}\label{NomEq}
+\zeta= m \sum _{i=0}^{N} \left( \frac{\beta}{\sigma _i \lambda_ j}\right)^{2} \cos (2\pi f_i).
+\end{equation}
+
+Citar l'expressi  anterior  s tant senzill com fer:
+\begin{verbatim}
+L'equaci  \ref{NomEq} determina $\ldots$
+\end{verbatim}
+L'equaci  \ref{NomEq} determina $\ldots$
+
+\subsection{Figures}
+
+A continuaci  es mostra el codi \LaTeX\ per incloure una figura continguda en un fitxer.
+
+\begin{verbatim}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.2\textwidth]{./LogoUIB.jpg}
+\caption{Exemple de figura}
+\label{NomFig}
+\end{center}
+\end{figure}
+\end{verbatim}
+El resultat es pot veure a la Fig.~\ref{NomFig}.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.2\textwidth]{./LogoUIB.jpg}
+\caption{Exemple de figura}
+\label{NomFig}
+\end{center}
+\end{figure}
+
+Es pot modificar la variable \texttt{width} per ajustar l'amplada de la figura com m s ens convingui. Teniu en compte que la variable
+\texttt{\textbackslash textwidth} guarda el valor de l'amplada del text dins la p gina i, per tant,  s una bona refer ncia per delimitar amplades de figura. Aix  doncs, la figura \ref{NomFig} ocupa la meitat de l'amplada del text en una p gina. El format final de la figura est  definit per la
+plantilla i \LaTeX\ s'encarrega de presentar-la de forma convenient.
+
+\subsection{Taules}
+
+Les taules definides en \LaTeX\ s'enumeren autom ticament i el format segueix les definicions especificades en la plantilla.
+
+Seguidament, a mode d'exemple, es presenta les expressions \LaTeX\  per a crear
+la taula \ref{NomTaula} que apareix m s avall:
+\begin{verbatim}
+\begin{tabular}{@{}llS@{}} 
+\toprule
+\multicolumn{2}{c}{Cotxes} \\ 
+\cmidrule(r){1-2}
+{Posici } & {Descripci } & {Velocitat m xima}\\
+ & &  \multicolumn{1}{s}{(\kilo\meter\per\second)} \\ 
+\midrule
+1 & Vermell & 120 \\
+2 & Blau & 80.1 \\
+3 & Verd & 92.50 \\
+4 & Blanc & 33.33 \\
+5 & Negre & 56.3 \\ 
+\bottomrule
+\end{tabular}
+\caption{Exemple de taula} \label{NomTaula}
+\end{table}
+\end{verbatim}
+\begin{table}
+\centering
+\begin{tabular}{@{}llS@{}} \toprule
+\multicolumn{2}{c}{\textbf{Cotxes}} \\ 
+\cmidrule(r){1-2}
+{\textbf{Posici }} & {\textbf{Descripci }} & {\textbf{Velocitat m xima}}\\
+ & &  \multicolumn{1}{s}{(\kilo\meter\per\second)} \\ \midrule
+1 & Vermell & 120 \\
+2 & Blau & 80.1 \\
+3 & Verd & 92.50 \\
+4 & Blanc & 33.33 \\
+5 & Negre & 56.3 \\ \bottomrule
+\end{tabular}
+\caption{Exemple de taula} \label{NomTaula}
+\end{table}
+
+L'entorn \texttt{tabular} que ofereix \LaTeX\   s molt complet i permet crear
+multitud de taules diferents, tot i que alhora  s bastant complexe. No s n les
+intencions del present document descriure la sintaxis i el format d'aquest
+tipus d'entorn. Es poden trobar molt f cilment \emph{tutorials} o altres informacions
+per aprendre a utilitzar de forma adient aquesta sintaxis o qualsevol altra de
+\LaTeX.  s bastant recomanable llegir la documentaci  del \emph{package}
+\texttt{booktabs}\footnote{No cal incloure la comanda  \texttt{\textbackslash usepackage\{booktabs\}} dins el document perqu  la classe ja ho fa.}~\cite{Fea05} on s'introdueixen una s rie de comandes per a poder realitzar
+taules de m s qualitat com la de l'exemple, tamb  es defineixen quines han de
+ser les pautes per fer una taula d'aspecte formal. En aquest exemple concret tamb  s'han usat les columnes \texttt{S} i \texttt{s} que ofereix el paquet \texttt{siunitx}~\cite{Wri12}. Un efecte similar es podria aconseguir amb les columnes de tipus \texttt{D} que inclou \texttt{memoir}~\cite[Cap. 11]{Wil10}.
+
+Cal fixar-se en que \LaTeX\ insereix les figures i taules sempre al principi de p gina. Per tant, no cal preocupar-se per la seva posici 
+dintre del document s'insereixen sempre en la mateixa posici  de forma autom tica.
+
+\section{Bibliografia}
+
+A la bibliografia s'han de llistar conjuntament llibres i articles de revistes.
+Citar una refer ncia bibliogr fica  s tant f cil com fer:
+\begin{verbatim}
+\cite{bib1}, \cite{bib2}, \cite{bib3}
+\end{verbatim}
+per citar la refer ncia \cite{bib1}, \cite{bib2}, \cite{bib3}. 
+
+El format de la bibliografia es genera autom ticament.
+
+\section{Acr nims}
+
+Per exemple, un acr nim ben conegut  s  \ac{IP}.
+% Aquesta sentencia ens permetr  generar una entrada a la llista d'acr nims.
+% En la llista d'acr nims es definiran cada un dels acronims i mitjan ant l'expressi  anterior podrem referenciar-los.

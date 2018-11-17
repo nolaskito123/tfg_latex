@@ -1,0 +1,275 @@
+%% ----------------ATENCI -----------------------
+%% Aquest document est  preparat per codificaci  
+%% ISO-8859-1. Si es llegeix amb un editor 
+%% preparat per una altra codificaci  alguns 
+%% car cters no es veuran correctament.
+%%---------------------------------------------- 
+%%
+%% Aquest document vos pot servir de base per la
+%% realitzaci  de la mem ria del treball final de
+%% grau. Es recomana seguir els consells que 
+%% apareixen en els diferents comentaris del 
+%% document. Convindr  mantenir l'estructura
+%% d'aquest exemple i introduir canvis sols 
+%% all  on s'indiqui.
+%%
+%%-----------------------------------------------
+%%
+%% La plantilla preparada per a la realitzaci  de
+%% la mem ria  s la classe LaTeX TFGEPSUIB.cls
+%% que es fonamenta en la classe memoir. Aquesta
+%% emula alguns `packages` que, per tant, no ser 
+%% necessari incloure dins el vostre document. El
+%% manual de memoir explica quins s n aquests
+%% paquets (per exemple booktabs, array, tabluarx). 
+%% Per altra banda, TFGEPSUIB tamb  carrega 
+%% autom ticament els paquets, fontenc, xcolor, 
+%% graphicx i microtype.
+%%
+%\documentclass{TFGEPSUIB}
+
+%%-----------------------------------------
+%% Opcions de la classe TFGEPSUIB:
+%%
+%% Per defecte, la classe TFGEPSUIB suposa
+%% que la mem ria es redactar  en catal  i que 
+%% els estudis s n els de Grau en Enginyeria
+%% telem tica. 
+%%
+%% Si preferiu utilitzar el castell  o angl s
+%% per a la redacci  de la mem ria podeu
+%% fer-ho indicant-ho a les opcions.
+%\documentclass[english]{TFGEPSUIB}
+%\documentclass[spanish]{TFGEPSUIB}
+%%
+%% Per indicar quins s n els estudis pels quals
+%% es redacta la mem ria heu d'incloure una de
+%% les seg ents opcions:
+%%
+%% GTEL - Grau en Enginyeria Telem tica
+%% GMAT - Grau de Matem tiques
+%% GINF - Grau d'Enginyeria Inform tica
+%% GEDI - Grau d'Enginyeria d'Edificaci 
+%% GELE - Grau d'Eng. Elec. Ind. i Autom tica
+%% GAGR - Grau en Eng. Agroali. i del Medi Rural
+%%
+%% Per escriure la mem ria en castell  pels estudis
+%% de matem tiques, la l nia inicial ser 
+\documentclass[spanish,GMAT]{TFGEPSUIB}
+%%------------------------------------------
+
+% Comentau una de les dues l nies seg ents segons 
+% la codificaci  amb que treballeu. 
+% Per defecte la codificaci   s latin1 (ISO-8859-1)
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+
+% Per incloure expressions matem tiques en
+% el document  s recomanable usar els paquets
+\usepackage{amsmath,amssymb,mathtools} 
+
+% Per incloure fragments de codi hi ha diferents
+% paquets disponibles. Triau el que vos sigui 
+% m s convenient, per exemple listings. 
+\usepackage{listings} 
+
+% Si voleu que les refer ncies bibliogr fiques
+% apareguin amb el format "autor-any" en comptes 
+% de "n mero" heu d'usar el paquet natbib.
+\usepackage[round,colon,sort&compress]{natbib} 
+
+% Si teniu figures en format eps, per poder-les 
+% usar amb pdflatex caldr  convertir-les. Per
+% aix  serveix el seg ent paquet. Caldran dues
+% compilacions, en la primera converteix la
+% figura i en la segon pot incloure-la.
+% Si les figures ja s n en format pdf (o jpg)
+% no cal carregar el paquet.
+% \usepackage[update,prepend]{epstopdf}
+
+% En general, la documentaci  t cnica pot
+% incloure molts acr nims. Per aix  es recomana
+% usar el seg ent paquet. Consultau el corresponent
+% manual per saber com s'usa.
+\usepackage[printonlyused]{acronym}
+
+% Les diferents unitats de mesura tenen un
+% format est ndard de representaci  que conv 
+% respectar. Per aix  s'usa el seg ent paquet.
+% Tamb  permet representar nombres en notaci 
+% cient fica i alinear correctament els valors 
+% num rics a les taules. Pegau una ullada al 
+% manual. Si no voleu usar-lo comentau la l nia. 
+\usepackage{siunitx}
+
+% Com que  s convenient que el paquet hyperref
+% sigui un dels darrers en carregar-se, si voleu 
+% afegir nous paquets, feis-ho a continuaci .
+%\usepackage{}
+
+% El paquet "hyperref" crea enlla os autom ticament 
+% dins el document. Aquests enlla os permeten la 
+% navegaci  a trav s de les diferents refer ncies 
+% figures, bibliografia, f rmules,  ndex, ...
+% tant sols assenyalant-los amb el ratol . 
+\usepackage[draft=false,colorlinks=true,backref,hyperindex,plainpages=false,breaklinks=true,bookmarksnumbered=true]{hyperref}
+
+% Aquests enlla os, per defecte, apareixen com a 
+% text de diferents colors, el que resulta molt 
+% pr ctic en la versi  electr nica del document,
+% per  que s'ha d'evitar quan es vulgui obtenir la 
+% versi  impresa. Aleshores, sempre que es vulgui 
+% imprimir el document s'haur  de descomentar 
+% la l nia seg ent que for a que tots els enlla os
+% apareguin de color negre.
+%\hypersetup{linkcolor=black,citecolor=black,backref=none}
+
+%----------------------------------------------
+% Dades de la Portada amb els valors adequats
+% La portada inclou informaci  del estudis,
+% t tol del projecte, autor(s) del projecte,
+% tutor(s) (i supervisor(s)) i data. T tol,
+% autor i tutor s n dades obligat ries. El
+% supervisor  s opcional i la data tamb , per 
+% per defecte sempre apareix la del dia.
+% Aquests valor s'han de definir si es vol usar
+% la comanda \portada o \maketitle.
+%
+% Els estudis ja s'han definit amb la opci 
+% corresponent, per  si el projecte
+%  s d'uns altres estudis no definits a les
+% opcions, com s n, per exemple, els dels plans
+% anteiors, sempre podeu usar la comanda \estudis
+% per definir-los.
+% Per exemple, per l'enginyeria t cnica en 
+% telem tica podeu usar:
+\estudis{\MakeUppercase{Doble titulación: Grados en Matemáticas e Ing. Telemática }}
+
+% Aqu  podeu posar el t tol de la vostra mem ria
+\title{Algoritmo para el chequeo de subsistemas de antena en redes UMTS}
+
+% Es recomana posar el nom de l'autor en 
+% maj scules. Es pot fer autom ticament amb la
+% comanda \MakeUppercase. Si hi ha m s d'un autor
+% es poden separar mitjan ant la comanda \and.
+% Basta substituir els personatges de rondalla
+% pels vostres noms.
+\author{\MakeUppercase{Kevin Alexander Nolasco Pajuelo}}
+
+% La comanda \tutor mostra el nom del director
+% a la portada. Si hi ha m s d'un tutor
+% es poden separar mitjan ant la comanda \and.
+\tutor{Tutor1 \and Tutor2 \and Tutor3 }
+
+% La comanda \supervisor permet incloure el nom 
+% del professor de la UIB que avala el treball,
+% en el cas que el director no sigui professor
+% de la UIB.Si hi ha m s d'un supervisor es poden 
+% separar mitjan ant la comanda \and.  s una 
+% comanda opcional
+% \supervisor{Pere Catorze}
+
+% Per defecte, la data apareix en el format 
+% "dia de mes de any". Si vols que sols aparegui 
+% el m s pots descomentar i modificar la l nia
+%\date{juliol de 2012}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+% Durant l'escriptura de la mem ria haureu de 
+% compilar-la moltes vegades. Si voleu guanyar
+% una mica de temps, podeu dividir el contingut
+% en diferents fitxers i compilar-ne sols alguns.
+% La comanda seg ent  s la que vos permet
+% definir quins compilar i quins no.
+%\includeonly{Instruccions,Annexos}
+
+% Quan vulgueu treballar amb tot el document, 
+% simplement, comentau la l nia anterior.  
+
+\begin{document}
+
+% Recordau haver indicat, t tol, autor i tutor
+% abans d'usar la comanda seg ent
+\portada
+
+% No toqueu la l nia seg ent 
+\frontmatter
+
+% Si despr s de la portada voleu incloure una 
+% p gina de t tol, podeu descomentar la l nia
+%\maketitle
+
+% Voleu dedicar i agrair el treball a alg ?
+% Descomenta les l nies seg ents i escriu el
+% que vulguis dins l'entorn 'agraiments' 
+%
+\cleartorecto \thispagestyle{empty}
+\begin{agraiments}
+Aquí el agradeciemiento
+\end{agraiments}
+
+% A continuaci  el Sumari
+\cleartorecto \tableofcontents
+
+% Si voleu que apareguin una llista de figures
+% i taules, descomentau les l nies corresponents
+\cleartorecto \listoffigures
+\cleartorecto \listoftables 
+
+% Si apareixen molts acr nims a la documentaci 
+% convindr  fer-ne una llista. Podeu veure com
+% crear-la consultant el fitxer 'Acronims.tex',
+% que  s el que s'inclou aqu .
+\include{Acronimos.tex} 
+% Si no usau acr nims, comentau la l nia anterior
+
+% En l'arxiu Resum.tex es posar  el resum
+% del treball.
+\include{Resum} 
+
+% No toqueu la l nia seg ent 
+\mainmatter\pagestyle{ruled}
+
+%%%%%% COS DEL TREBALL %%%%%%%%%%%%
+
+% Una bona pr ctica consisteix en dividir
+% un document llarg en diferents fragments,
+% per exemple per cap tols, i incloure aquests
+% fragments dins el fitxer principal amb la
+% comanda \include. Aix , podem escriure la 
+% comanda \includeonly{llista fitxers a compilar}
+% que ens permetr  processar sols aquella part
+% del document que ens interessi.
+
+\include{Introduccion}
+\include{Instrucciones}
+\include{Propuesta}
+\include{Memoria}
+\include{Presentacion}
+\include{Conclusiones}
+
+%%%%%%% Fi cos del treball %%%%%%%%%%%
+
+% Si el vostre document no cont  ap ndixs 
+% comentau les dues l nies seg ents
+\appendix 
+\include{Annexos} 
+
+% En aquest cas sols hi ha un fitxer d'annexos,
+% per  podeu afegir tants \include com calgui. 
+
+%%%%%%% Fi ap ndix 
+
+% No toqueu la l nia seg ent 
+\backmatter
+
+% La comanda seg ent defineix l'estil bibliogr fic
+\bibliographystyle{IEEEtran}
+
+% La comanda seg ent defineix el fitxer que
+% cont  les refer ncies bibliogr fiques.
+% En aquest cas  s el fitxer Bibliografia.bib
+\bibliography{Bibliografia} 
+
+\end{document}
